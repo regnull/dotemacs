@@ -67,3 +67,6 @@ There are two things you can do about this warning:
 (setq nyan-bar-length 40)
 (setq nyan-animate-nyancat t)
 (nyan-mode)
+
+;; Go mode.
+(add-hook 'before-save-hook 'gofmt-before-save)
