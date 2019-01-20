@@ -14,6 +14,13 @@
 ;; Show column number.
 (setq column-number-mode t)
 
+;; Nyan mode
+(require 'nyan-mode)
+(setq nyan-wavy-tail t)
+(setq nyan-bar-length 40)
+(setq nyan-animate-nyancat t)
+(nyan-mode)
+
 ;; MELPA
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -35,3 +42,15 @@ There are two things you can do about this warning:
 (package-initialize)
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (nyan-mode go-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
