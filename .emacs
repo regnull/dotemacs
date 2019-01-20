@@ -10,16 +10,20 @@
 
 ;; Key mappings.
 (global-set-key (kbd "<f5>") 'buffer-menu)
+(keyboard-translate ?\C-h ?\C-?) ;; Fix backspace delete.
 
 ;; Show column number.
 (setq column-number-mode t)
 
-;; Nyan mode
-(require 'nyan-mode)
-(setq nyan-wavy-tail t)
-(setq nyan-bar-length 40)
-(setq nyan-animate-nyancat t)
-(nyan-mode)
+;; Civilized handling of backup files.
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.saves/"))  ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups
 
 ;; MELPA
 (require 'package)
@@ -54,3 +58,12 @@ There are two things you can do about this warning:
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Mode settings, this must follow custom-set-variables.
+
+;; Nyan mode
+(require 'nyan-mode)
+(setq nyan-wavy-tail t)
+(setq nyan-bar-length 40)
+(setq nyan-animate-nyancat t)
+(nyan-mode)
